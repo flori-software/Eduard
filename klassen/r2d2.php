@@ -10,7 +10,7 @@ class r2d2 {
         try {
             $this->pdo = new PDO($dsn, $username, $password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Verbindung zur Datenbank hergestellt!";
+            #echo "Verbindung zur Datenbank hergestellt!";
         } catch (PDOException $e) {
             echo "Fehler bei der Verbindung zur Datenbank: " . $e->getMessage();
         }         
