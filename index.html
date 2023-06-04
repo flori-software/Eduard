@@ -1,6 +1,16 @@
 <script>
     // An dieser Stelle unterscheiden wir, ob die Seite von einem mobilen Gerät oder von einem klassischen Computer aus aufgerufen wurde
     var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
-    window.location.href = "start.php?isMobile=" + isMobile;
+    // An dieser Stelle wandeln wir den Wert in einen nummerischen Wert um, weil sich später php mit Boolschen Werten eher schwer tut...
+    console.log(isMobile);
+    if(isMobile === true) {
+       var mobile = 1;
+    } else {
+       var mobile = 0;
+    } 
+    console.log("mobil ist " + mobile);
+    var url = "start.php?mobile=" + mobile;
+    console.log(url);
+    window.location.href = url
 
 </script>

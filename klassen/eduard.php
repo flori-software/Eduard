@@ -6,7 +6,7 @@ class Eduard {
     public array  $patenschaften; // Objekte des Typs Einzelfall
     private       $r2d2;
 
-    public function __construct(bool $mobile = true) {
+    public function __construct(int $mobile = 1) {
         // Wichtig für die Darstellung der Seite:
         $this->mobile = $mobile;
         $this->r2d2   = new r2d2();
@@ -18,6 +18,7 @@ class Eduard {
     }
 
     private function ui() {
+        
         $this->lese_willkommenstext();
         echo '<html lang="de">
         <head>
@@ -25,12 +26,40 @@ class Eduard {
         <title>Werde Pate!</title>';
         if($this->mobile) {
             // Style für mobile Geräte
+            echo '<style>
+            html {
+                background-color: cornsilk;
+                font-size: 48px;
+            }
 
+            .titel {
+                font-family: Helvetica;
+                font-size: 64px;
+                font-weight: bold;
+            }
+            </style>';
         } else {
+            echo '<style>
+            html {
+                background-color: cornsilk;
+                font-size: 18px;
+            }
 
+            .titel {
+                font-family: Helvetiva;
+                font-size: 36px;
+                font-weight: bold;
+            }
+            </style>';
         }
-        echo $this->text;
+        
+        echo '<body>
+        <span class="titel">Diese Menschen brauchen Deine Hilfe</span>
+        <hr>'.$this->text;
 
+
+        echo '</body></html>';
+        
     }
 
     private function alle_lesen() {
