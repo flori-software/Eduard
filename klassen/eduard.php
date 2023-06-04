@@ -1,5 +1,6 @@
 <?php
-
+include "FUNCTIONS.php";
+include "r2d2.php";
 class Eduard {
     public bool   $mobile;
     public string $text; // Willkommenstext
@@ -37,6 +38,13 @@ class Eduard {
                 font-size: 64px;
                 font-weight: bold;
             }
+
+            .loginfeld {
+                background-color: white;
+                padding: 20px;
+                border-radius: 20px;
+                border: 1px solid firebrick;
+            }
             </style>';
         } else {
             echo '<style>
@@ -50,6 +58,23 @@ class Eduard {
                 font-size: 36px;
                 font-weight: bold;
             }
+
+            .loginfeld {
+                background-color: white;
+                padding: 20px;
+                border-radius: 20px;
+                border: 1px solid firebrick;
+                display: inline-block;
+                z-index: 10;
+            }
+
+            input {
+                font-family: Helvetica;
+                font-size: 36px;
+                font-weight: lighter;
+                border-radius: 25px;
+                margin: 20px;
+            }
             </style>';
         }
         
@@ -57,6 +82,12 @@ class Eduard {
         <span class="titel">Diese Menschen brauchen Deine Hilfe</span>
         <hr>'.$this->text;
 
+        // Login-Formular
+        echo '<div class="loginfeld" id="loginfeld">
+        <input name="benutzer"><br>
+        <input type="password" name="passwort"><br>
+        <input type="submit" value="Anmelden">
+        </div>';
 
         echo '</body></html>';
         

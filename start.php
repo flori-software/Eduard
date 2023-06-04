@@ -1,6 +1,8 @@
 <?php
 include "klassen/eduard.php";
-include "klassen/r2d2.php";
+
+jquery_laden();
+jquery_ui_laden();
 $eduard = new Eduard($_GET["mobile"]) ?? 0;
 
 
@@ -10,3 +12,10 @@ $eduard = new Eduard($_GET["mobile"]) ?? 0;
 
 
 ?>
+<script>
+$(document).ready(function() {
+    $("#loginfeld").draggable();
+});
+
+
+</script>
