@@ -1,0 +1,6 @@
+<script>
+    // An dieser Stelle unterscheiden wir, ob die Seite von einem mobilen Gerät oder von einem klassischen Computer aus aufgerufen wurde
+    var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+    window.location.href = "start.php?isMobile=" + isMobile;
+
+</script>
