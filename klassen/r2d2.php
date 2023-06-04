@@ -23,10 +23,8 @@ class r2d2 {
             $sql .= " WHERE `".$gesuchtes_feld."` = '".$gesuchter_wert."'";
         }
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':id', $id);
         $stmt->execute();
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($results as $row) {
+        while($row = $stmt -> fetch()) {
             $antwort = $row[$wert];
         }
         return $antwort;

@@ -10,7 +10,7 @@ class Eduard {
         // Wichtig für die Darstellung der Seite:
         $this->mobile = $mobile;
         $this->r2d2   = new r2d2();
-        $this->lese_willkommenstext();
+        $this->ui();   
     }
 
     private function lese_willkommenstext() {
@@ -18,10 +18,18 @@ class Eduard {
     }
 
     private function ui() {
+        $this->lese_willkommenstext();
+        echo '<html lang="de">
+        <head>
+        <meta charset="utf-8">
+        <title>Werde Pate!</title>';
+        if($this->mobile) {
+            // Style für mobile Geräte
 
-    }
+        } else {
 
-    private function ui_mobile() {
+        }
+        echo $this->text;
 
     }
 
