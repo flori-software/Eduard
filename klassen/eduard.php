@@ -65,6 +65,7 @@ class Eduard {
                 border-radius: 20px;
                 border: 1px solid firebrick;
                 display: inline-block;
+                position: absolute;
                 z-index: 10;
             }
 
